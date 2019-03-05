@@ -49,6 +49,13 @@ class Student
     new_student.save
   end
 
+  def self.new_from_db(row)
+    new_student = self.new 
+    new_student.id = row[0][0]
+    new_student.name = row[0][1]
+    new_student.grade = row[0][2]
+  end
+
   def update
 
   end
