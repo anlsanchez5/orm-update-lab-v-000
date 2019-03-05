@@ -32,10 +32,10 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def save(name, grade)
+  def save
     sql = <<-SQL
       INSERT INTO students (name, grade) VALUES (?, ?)
         SQL
-    @id = DB[:conn].execute(sql, name, grade)[0][0]
+    @id = DB[:conn].execute(sql, self.name, self.grade)[0][0]
   end
 end
