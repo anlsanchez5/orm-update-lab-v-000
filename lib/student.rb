@@ -67,7 +67,7 @@ class Student
   end
 
   def update(change)
-    sql = <<-SQL 
+    sql = <<-SQL
       UPDATE students SET name = ?, grade = ? WHERE id = ?
       SQL
 
